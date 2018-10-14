@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.dangdang</groupId>
+	<version>2.1.6-SNAPSHOT</version>
+	<artifactId>elastic-job-example-lite-springboot</artifactId>
+	<name>${project.artifactId}</name>
+
+	<properties>
+		<springboot.version>1.4.2.RELEASE</springboot.version>
+		<elastic-job-lite-core.version>2.1.5</elastic-job-lite-core.version>
+	</properties>
+
+	<dependencies>
+		<!-- <dependency>
+		 <groupId>com.dangdang</groupId>
+		  <artifactId>elastic-job-example-jobs
+		  </artifactId> 
+			<version>${project.parent.version}</version>
+			 </dependency>
+			  <dependency> 
+			  <groupId>com.dangdang</groupId> 
+			<artifactId>elastic-job-example-embed-zk</artifactId> 
+			<version>${project.parent.version}</version> 
+			</dependency> -->
+			<dependency>
+            <groupId>org.apache.curator</groupId>
+			<artifactId>curator-test</artifactId>
+			<exclusions>
+				<exclusion>
+    				<groupId>com.google.guava</groupId>
+  					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+			<version>2.4.2</version>
+        </dependency>
+		<dependency>
+			<groupId>com.dangdang</groupId>
+			<artifactId>elastic-job-lite-core</artifactId>
+			<version>${elastic-job-lite-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dangdang</groupId>
+			<artifactId>elastic-job-lite-spring</artifactId>
+			<version>${elastic-job-lite-core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<version>${springboot.version}</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>com.h2database</groupId> <artifactId>h2</artifactId> 
+			<version>${h2.version}</version> </dependency> <dependency> <groupId>mysql</groupId> 
+			<artifactId>mysql-connector-java</artifactId> <version>${mysql.version}</version> 
+			</dependency> -->
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.8</version>
+		</dependency>
+	</dependencies>
+	
+	
+	<build>
+   <plugins>
+     <plugin>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <configuration>
+         <source>1.8</source>
+         <target>1.8</target>
+       </configuration>
+     </plugin>
+   </plugins>
+</build>
+</project>
