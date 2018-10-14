@@ -15,7 +15,7 @@
  * </p>
  */
 
-package com.dangdang.ddframe.job.example;
+package com.dangdang.ddframe.job.example.zk;
 
 import org.apache.curator.test.TestingServer;
 
