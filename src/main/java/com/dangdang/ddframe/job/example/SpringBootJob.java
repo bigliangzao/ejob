@@ -23,12 +23,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.dangdang.ddframe.job.example.zk.EmbedZookeeperServer;
 
 @SpringBootApplication
-public class SpringBootMain {
+public class SpringBootJob {
     
     // CHECKSTYLE:OFF
     public static void main(final String[] args) {
     // CHECKSTYLE:ON
         EmbedZookeeperServer.start(6181);
-        SpringApplication.run(SpringBootMain.class,args);
+        SpringApplication.run(SpringBootJob.class,args);
     }
 }
