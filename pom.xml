@@ -8,8 +8,8 @@
 	<name>${project.artifactId}</name>
 
 	<properties>
-		<springboot.version>1.4.2.RELEASE</springboot.version>
-		<elastic-job-lite-core.version>2.1.5</elastic-job-lite-core.version>
+		<springboot.version>1.2.5.RELEASE</springboot.version>
+		<elastic-job-lite-core.version>2.1.0</elastic-job-lite-core.version>
 	</properties>
 
 	<dependencies>
@@ -83,16 +83,33 @@
 		</dependency>
 	</dependencies>
 	
-	
 	<build>
-   <plugins>
-     <plugin>
+		<finalName>elastic-job</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+                <!--这里写上main方法所在类的路径-->
+                <configuration>
+                    <mainClass>com.dangdang.ddframe.job.example.SpringBootJob</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+			</plugin>
+			<plugin>
        <artifactId>maven-compiler-plugin</artifactId>
        <configuration>
          <source>1.8</source>
          <target>1.8</target>
        </configuration>
      </plugin>
-   </plugins>
-</build>
+		</plugins>
+	</build>
+ 
+	
 </project>

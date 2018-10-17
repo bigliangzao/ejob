@@ -37,8 +37,6 @@ public class SimpleJobConfig {
     @Resource
     private ZookeeperRegistryCenter regCenter;
     
-    @Resource
-    private JobEventConfiguration jobEventConfiguration;
     
     @Bean
     public SimpleJob simpleJob() {
@@ -51,7 +49,7 @@ public class SimpleJobConfig {
     		@Value("${simpleJob.cron}") final String cron,
     		@Value("${simpleJob.shardingTotalCount}") final int shardingTotalCount,
             @Value("${simpleJob.shardingItemParameters}") final String shardingItemParameters) {
-        return new SpringJobScheduler(simpleJob, regCenter, getLiteJobConfiguration(simpleJob.getClass(), cron, shardingTotalCount, shardingItemParameters), jobEventConfiguration);
+        return new SpringJobScheduler(simpleJob, regCenter, getLiteJobConfiguration(simpleJob.getClass(), cron, shardingTotalCount, shardingItemParameters));
     }
     
     private LiteJobConfiguration getLiteJobConfiguration(

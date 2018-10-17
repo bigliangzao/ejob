@@ -1,18 +1,22 @@
 package com.dangdang.ddframe.job.example.config;
 
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 
 public class SpringSimpleJob implements SimpleJob {
-
+	
+	private Log log = LogFactory.getLog(SpringSimpleJob.class);
+	
 	public void execute(ShardingContext shardingContext) {
-		
-		//getShardingTotalCount(), getShardingItem()
+		log.info("======================作业开始执行====================");
 		int shardingTotalCount = shardingContext.getShardingTotalCount();
+		log.info("shardingTotalCount:"+shardingTotalCount);
 		int shardingItem = shardingContext.getShardingItem();
-		System.out.println(shardingItem);
-		System.out.println("分片总数为:"+shardingTotalCount);
-		System.out.println("作业开始执行=============================================");
+		log.info("shardingItem:"+shardingItem);
 	}
 
 }
