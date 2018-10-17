@@ -1,5 +1,5 @@
 regCenter:
-  serverList: localhost:6181
+  serverList: 114.115.182.232:2181
   namespace: elastic-job-lite-springboot
   
 simpleJob:
